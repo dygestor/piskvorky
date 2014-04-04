@@ -1,0 +1,4 @@
+name: piskvorky
+description: A simple game
+dependencies:
+  browser: any

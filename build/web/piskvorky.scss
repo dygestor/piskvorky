@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  > div, > input {
+    float: left;
+  }
+  
+  > div {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    margin-right: 30px;
+  }
+  
+  > canvas {
+    display: block;
+    clear: both;
+  }
+}
