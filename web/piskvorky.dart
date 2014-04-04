@@ -46,9 +46,11 @@ class Piskvorky {
     _new_game_button.onClick.listen((e) {
       _width = width;
       _height = height;
+      _canvasWidth = canvasWidth;
+      _canvasHeight = canvasHeight;
       _player = 1;
       _end = false;
-      _required_to_win = 5;
+      _required_to_win = toWin;
       
       setupBoard();
       

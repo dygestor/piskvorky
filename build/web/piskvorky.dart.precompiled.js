@@ -3934,7 +3934,7 @@ z.toString
 z=H.VM(new W.eu(z,C.hV.Ph,!1),[null])
 H.VM(new W.Ov(0,z.uv,z.Ph,W.aF(new G.jt(this)),z.Sg),[H.Kp(z,0)]).Zz()
 z=J.Vg(this.j8)
-H.VM(new W.Ov(0,z.uv,z.Ph,W.aF(new G.Fl(this,b,c)),z.Sg),[H.Kp(z,0)]).Zz()},
+H.VM(new W.Ov(0,z.uv,z.Ph,W.aF(new G.Fl(this,b,c,d,e,f)),z.Sg),[H.Kp(z,0)]).Zz()},
 static:{My:function(a,b,c,d,e,f){var z=new G.z5(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 z.Jv(a,b,c,d,e,f)
 return z}}},
@@ -3970,13 +3970,15 @@ else x=!0}else x=!0
 if(x)z.aq(v,u)
 z.W2(t)}}}},
 Fl:{
-"^":"Tp:8;b,c,d",
+"^":"Tp:8;b,c,d,e,f,UI",
 call$1:function(a){var z=this.b
 z.KC=this.c
 z.ey=this.d
+z.es=this.e
+z.f1=this.f
 z.CU=1
 z.oD=!1
-z.M2=5
+z.M2=this.UI
 z.Yi()
 J.Qy(z.Gs,"Player "+C.jn.bu(z.CU)+"'s turn.")
 z.W2(H.VM([],[P.hL]))}},
@@ -7121,9 +7123,12 @@ if(!"name" in jt)jt.name="jt"
 $desc=$collectedClasses.jt
 if($desc instanceof Array)$desc=$desc[1]
 jt.prototype=$desc
-function Fl(b,c,d){this.b=b
+function Fl(b,c,d,e,f,UI){this.b=b
 this.c=c
-this.d=d}Fl.builtin$cls="Fl"
+this.d=d
+this.e=e
+this.f=f
+this.UI=UI}Fl.builtin$cls="Fl"
 if(!"name" in Fl)Fl.name="Fl"
 $desc=$collectedClasses.Fl
 if($desc instanceof Array)$desc=$desc[1]
