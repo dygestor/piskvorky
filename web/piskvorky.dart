@@ -1,9 +1,12 @@
 import 'dart:html';
 import 'dart:math' as math;
+import 'dart:convert' show JSON;
 
 class Piskvorky {
   int _width;
   int _height;
+  int _canvasWidth;
+  int _canvasHeight;
   int _x;
   int _y;
   int _player;
@@ -16,13 +19,15 @@ class Piskvorky {
   
   List<List<int>> _board;
   
-  Piskvorky(String container, int width, int height) {
+  Piskvorky(String container, int width, int height, int canvasWidth, int canvasHeight, int toWin) {
     _width = width;
     _height = height;
+    _canvasWidth = canvasWidth;
+    _canvasHeight = canvasHeight;
     _container = container;
     _player = 1;
     _end = false;
-    _required_to_win = 5;
+    _required_to_win = toWin;
     
     setupBoard();
     
@@ -51,6 +56,11 @@ class Piskvorky {
       
       draw(new List<Point>());
     });
+  }
+  
+  static void fromJSON(String input) {
+    Map json = JSON.decode(input);
+    Piskvorky p = new Piskvorky(json["container"], json["cols"], json["rows"], json["width"], json["height"], json["toWin"]);
   }
   
   void setupBoard() {
@@ -203,8 +213,8 @@ class Piskvorky {
   
   CanvasElement generateElement() {
     CanvasElement canvas = new CanvasElement();
-    canvas.width = 500;
-    canvas.height = 500;
+    canvas.width = _canvasWidth;
+    canvas.height = _canvasHeight;
     
     _context = canvas.getContext('2d');
     
@@ -253,5 +263,5 @@ class Piskvorky {
 }
 
 void main() { 
-  Piskvorky p = new Piskvorky("#container", 10, 10);
+  Piskvorky.fromJSON('{"rows": 15, "cols": 15, "width": 800, "height": 800, "container": "#container", "toWin": 5}');
 }
