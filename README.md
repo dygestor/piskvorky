@@ -1,4 +1,0 @@
-piskvorky
-=========
-
-A simple game
